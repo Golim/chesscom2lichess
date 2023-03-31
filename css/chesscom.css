@@ -1,0 +1,9 @@
+.lichess-icon {
+    background-image: url(../img/lichesslogowhite.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    height: 1.5em;
+    width: 1.5em;
+    margin: 0 1.2rem 0 -.5rem;
+}

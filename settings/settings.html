@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Chess.com to Lichess - Settings</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Settings: Chess.com to Lichess</h1>
+        </div>
+        <div class="description">
+            <p>This extension allows to quickly analyse your chess.com games on Lichess.</p>
+            <p>Developed by <a href="https://golim.github.io" target="_blank">golim</a></p>
+        </div>
+        <div class="content">
+            <form class="settings">
+                <div class="setting">
+                    <div class="setting-name">
+                        <h2>Computer analisys</h2>
+                    </div>
+                    <div class="setting-value">
+                        <input type="checkbox" name="analysis" checked id="analysis">
+                            <label for="analysis">Ask a computer analysis to Lichess by default</label>
+                        </input>
+                    </div>
+                </div>
+
+                <div class="setting" style="display: none;">
+                    <div class="setting-name">
+                        <h2>Timestamps</h2>
+                    </div>
+                    <div class="setting-value">
+                        <input type="checkbox" name="timestamps" id="timestamps">
+                        <label for="timestamps">Import the timestamps to Lichess</label>
+                    </div>
+                </div>
+
+                <div class="setting" style="display: none;">
+                    <div class="setting-name">
+                        <h2>Rewrite username (not implemented yet)</h2>
+                    </div>
+                    <div class="setting-description">
+                        <p>Rewrite your chess.com username with your Lichess username (in case they differ)</p>
+                    </div>
+                    <div class="setting-value">
+                        <label>chess.com username</label>
+                        <input type="text" name="chesscom" value="" placeholder="chess.com username" id="chesscom_username">
+                        <br>
+                        <label>Lichess username</label>
+                        <input type="text" name="lichess" value="" placeholder="lichess username" id="lichess_username">
+                    </div>
+                </div>
+                <div class="break"></div>
+                <div class="footer">
+                    <button type="submit" name="submit">Save</button>
+                </div>
+            </form>
+        </div>
+        <div id="saved">
+            <p>Settings saved!</p>
+        </div>
+    </div>
+    <script src="settings.js"></script>
+</body>

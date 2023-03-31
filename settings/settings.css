@@ -1,0 +1,135 @@
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.description {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: #666;
+}
+
+.content {
+    padding: 20px 0;
+}
+
+.settings {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    display: flex;
+}
+
+.setting {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+.setting-name {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #666;
+}
+
+.setting-value {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #666;
+}
+
+.setting-value input {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    accent-color: #7FA650;
+}
+
+.setting-value input:checked {
+    background-color: #95BB4A;
+    color: #FFF;
+}
+
+.setting-value input:hover {
+    background-color: #95BB4A;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-top: 1px solid #7FA650;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.footer button {
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.footer button:hover {
+    background-color: #95BB4A;
+    color: #FFF;
+    border: 1px solid #95BB4A;
+}
+
+.footer button:active {
+    background-color: #7FA650;
+    color: #FFF;
+    border: 1px solid #7FA650;
+}
+
+#saved {
+    display: none;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #7FA650;
+    font-weight: bold;
+}
+
+.button {
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    cursor: pointer;
+    max-width: 120px;
+}
+
+.button a {
+    color: #666;
+    text-decoration: none;
+    float: right;
+}
+
+.github-icon {
+    background-image: url(../img/GitHub-Mark-64px.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    height: 1.3em;
+    width: 1.3em;
+    margin: 0 1.2rem 0 -.5rem;
+}

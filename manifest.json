@@ -1,0 +1,48 @@
+{
+    "manifest_version": 2,
+    "name": "Chesscom2Lichess",
+    "version": "1.0",
+
+    "description": "Analyse your chess.com games on lichess.org",
+
+    "homepage_url": "https://golim.github.io/",
+
+    "background": {
+        "scripts": ["src/background.js"],
+        "persistent": false
+    },
+
+    "icons": {
+        "16": "img/icon16.png",
+        "32": "img/icon32.png",
+        "192": "img/icon192.png"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["*://*.chess.com/*"],
+            "js": ["src/chesscom.js"],
+            "css": ["css/chesscom.css"]
+        },
+        {
+            "matches": ["*://lichess.org/paste", "*://*.lichess.org/paste"],
+            "js": ["src/lichess.js"]
+        }
+    ],
+
+    "options_ui": {
+        "page": "settings/settings.html",
+        "chrome_style": true
+    },
+
+    "permissions": [
+        "tabs",
+        "storage"
+    ],
+
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "chesscom2lichess@golim.github.io"
+        }
+    }
+}
