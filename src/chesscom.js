@@ -53,12 +53,15 @@ async function openTab() {
 
 // Wait for an element to be added to the page
 const onMutation = () => {
-    var element = document.getElementsByClassName('live-game-buttons-game-over')[0];
+    var element = document.getElementsByClassName('new-game-buttons-component')[0];
     if (element == null) {
         element = document.getElementsByClassName('daily-game-footer-game-over')[0];
     }
     if (element == null) {
         element = document.getElementsByClassName('quick-analysis-buttons')[0];
+    }
+    if (element == null) {
+        element = document.getElementsByClassName('game-controls-primary-component')[0];
     }
 
     if (element) {
