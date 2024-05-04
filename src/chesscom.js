@@ -61,7 +61,7 @@ const onMutation = () => {
         element = document.getElementsByClassName('quick-analysis-buttons')[0];
     }
     if (element == null) {
-        element = document.getElementsByClassName('game-controls-primary-component')[0];
+        element = document.getElementsByClassName('game-controls-view-component')[0];
     }
 
     if (element) {
