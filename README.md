@@ -1,6 +1,6 @@
 [![Mozilla Add-on](https://img.shields.io/amo/v/chesscom2lichess.svg?label=Firefox)](https://addons.mozilla.org/en-US/firefox/addon/chesscom2lichess/)
 
-# Analyse Chess.com games on Liches
+# Analyse Chess.com games on Lichess
 
 This Firefox extension adds a button to the game page (once it's finished) to automatically send the game to the amazing Lichess analysis page.
 

@@ -82,7 +82,16 @@ const onMutation = () => {
     
         // console.log("Button created, adding Lichess Analysis button... ");
         try {
-            element.appendChild(button);
+            // Analysis button is added to different elements depending on the page
+            if (element.classList.contains('game-controls-view-component')) {
+                const buttonContainer = document.createElement('div');
+                buttonContainer.className = 'game-controls-primary-component';
+                buttonContainer.appendChild(button);
+
+                element.insertBefore(buttonContainer, element.children[1]);
+            } else {
+                element.appendChild(button);
+            }
             // console.log("Button added! :)");
         } catch (e) {
             console.log("Failed to add Lichess Analysis button.");
