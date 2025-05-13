@@ -21,27 +21,36 @@ async function openTab() {
     // Open the share interface on chess.com and get the PGN
     share.click();
 
-    // Wait for the PGN to be loaded
-    while (document.getElementsByClassName("board-tab-item-underlined-component share-menu-tab-selector-tab")[0] == null)
+    // Wait for the share menu to be loaded
+    while (document.getElementsByClassName("share-menu-tab-image-component")[0] == null)
         await sleep(0.5);
 
-    document.getElementsByClassName("board-tab-item-underlined-component share-menu-tab-selector-tab")[0].click();
+    // Get the "PGN" tab button
+    const tabPgn = document.getElementById("tab-pgn");
+    if (tabPgn == null) {
+        console.log("ERROR: Could not find the tab-pgn element.");
+        return;
+    }
+    tabPgn.click();
 
-    while (document.getElementsByClassName("share-menu-tab-image-component")[0] == null)
+    // Wait for the PGN to be loaded
+    while (document.getElementsByClassName("share-menu-tab-pgn-textarea")[0] == null)
         await sleep(0.5);
 
     // Get the "Timestamps" setting from the extension
     browser.storage.sync.get("timestamps", async function (result) {
         if (result.timestamps) {
-            while (document.getElementsByClassName("circle-clock icon-font-chess share-menu-tab-pgn-icon")[0] == null)
+            while (document.getElementsById("tab-pgn-timestamps")[0] == null)
                 await sleep(0.5);
-            document.getElementsByClassName("circle-clock icon-font-chess share-menu-tab-pgn-icon")[0].click();
+            document.getElementsById("tab-pgn-timestamps")[0].click();
             // Wait for the PGN to be loaded
             await sleep(0.5);
         }
     });
 
-    const pgn = document.getElementsByClassName("share-menu-tab-image-component")[0].getAttribute("pgn");
+    // Get a textarea named pgn
+    const textarea = document.getElementsByClassName("share-menu-tab-pgn-textarea")[0];
+    const pgn = textarea.value;
     try {
         // Send a message to the background script
         browser.runtime.sendMessage(pgn);
@@ -54,7 +63,8 @@ function createLichessAnalysisButton(id = 'lichess-analysis-button') {
     const button = document.createElement('button');
     button.type = 'button';
     button.id = id;
-    button.className = 'ui_v5-button-component ui_v5-button-primary ui_v5-button-large ui_v5-button-full';
+    //                  cc-button-component cc-button-primary cc-button-xx-large cc-bg-primary cc-button-full
+    button.className = 'cc-button-component cc-button-primary cc-button-xx-large cc-bg-primary cc-button-full';
     button.innerHTML = '<span class="lichess-icon"></span><span> Analyse on Lichess</span>';
 
     button.setAttribute('style', 'grid-column: span 2;');
