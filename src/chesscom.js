@@ -3,7 +3,8 @@ function sleep(seconds) {
 }
 
 async function openTab() {
-    share = document.getElementsByClassName("share")[0]
+    // button with aria-label="Share"
+    share = document.querySelector('button[aria-label="Share"]');
     if (share == null) {
         // Most likely we are in Zen mode
         minimize = document.getElementsByClassName("board-layout-icon icon-font-chess minimize")[0]
@@ -13,9 +14,9 @@ async function openTab() {
             return;
         }
         minimize.click();
-        while (document.getElementsByClassName("share")[0] == null)
+        while (document.querySelector('button[aria-label="Share"]') == null)
             await sleep(0.5);
-        share = document.getElementsByClassName("share")[0];
+        share = document.querySelector('button[aria-label="Share"]');
     }
 
     // Open the share interface on chess.com and get the PGN
@@ -63,7 +64,6 @@ function createLichessAnalysisButton(id = 'lichess-analysis-button') {
     const button = document.createElement('button');
     button.type = 'button';
     button.id = id;
-    //                  cc-button-component cc-button-primary cc-button-xx-large cc-bg-primary cc-button-full
     button.className = 'cc-button-component cc-button-primary cc-button-xx-large cc-bg-primary cc-button-full';
     button.innerHTML = '<span class="lichess-icon"></span><span> Analyse on Lichess</span>';
 
@@ -87,7 +87,7 @@ const onMutation = () => {
 
             // Add the button to the game-over-modal-buttons element
             const buttonContainer = document.createElement('div');
-            buttonContainer.className = 'game-over-review-button-component';
+            buttonContainer.className = 'quick-analysis-loader-component';
             buttonContainer.appendChild(button);
 
             element.insertBefore(buttonContainer, element.children[0]);
